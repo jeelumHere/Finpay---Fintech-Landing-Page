@@ -1,0 +1,561 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/src/output.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+    <style>
+        .uw{
+            opacity: 0;
+        }
+        .uw1{
+            opacity: 0;
+        }
+        .hz{
+            opacity: 0;
+        }
+        .uw2{
+            opacity: 0;
+        }
+        .uw.upward{
+            animation-name: up;
+            animation-duration: 1.5s;
+            animation-fill-mode: forwards;
+        }
+        .uw1.upward{
+            animation-name: up;
+            animation-duration: 1.5s;
+            animation-delay: 0.75s;
+            animation-fill-mode: forwards;
+        }
+        @keyframes up {
+            from{
+                transform: translateY(100px);
+            }
+            to{
+                opacity: 1;
+            }
+        }
+        .hz.horizontal{
+            animation-name: hz;
+            animation-duration: 1.5s;
+            animation-fill-mode: forwards;
+        }
+        @keyframes hz {
+            from{
+                transform: translateX(-100px);
+            }
+            to{
+                opacity: 1;
+            }
+        }
+        .uw2.upward{
+            animation-name: upReverse;
+            animation-duration: 1.5s;
+            animation-delay: 0.75s;
+            animation-fill-mode: forwards;
+        }
+        @keyframes upReverse {
+            from{
+                transform: translateY(-100px);
+            }
+            to{
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar loads here automatically -->
+    <div id="navbar"></div>
+
+    <!--Hero section starts here-->
+    <section
+        class="gap-3 text-center md:grid md:grid-cols-2 md:px-10 md:pt-16 py-20  bg-[url('https://img.freepik.com/premium-photo/abstract-background-design-hd-light-active-green_851755-19866.jpg?semt=ais_rp_progressive&w=740&q=80')] z-0">
+
+        <!--text section starts here-->
+        <div class="uw">
+            <div class="text-3xl md:text-5xl my-5"><b>Get paid early</b> save automatically all your pay.</div>
+            <div class="text-[8px] md:text-sm text-gray-400 w-1/2 ml-[25%]">Supprt small businesses with simple
+                invoices, powerfull
+                integration, and cash flow management tools.</div>
+
+            <div class="my-2 md:p-2"><input
+                    class="placeholder:text-[10px] lg:placeholder:text-[16px] placeholder:text-gray-400 placeholder:text-center border rounded p-2"
+                    type="text" id="email" placeholder="Enter your business email"></div>
+
+            <div class="mt-2">
+                <a class="text-sm bg-green-300 text-white p-2 rounded inline-flex items-center gap-1 group
+            transition-all duration-300 ease-in-out
+            hover:shadow-lg hover:shadow-blue-400/50
+            hover:-translate-y-1
+            active:translate-y-0 active:shadow-none" href="getstarted.html">
+                    Get Started
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                        class="w-4 h-4 -rotate-45 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
+                        fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                </a>
+            </div>
+
+            <div class="my-1">
+                <b class="mx-2 text-lg md:text-2xl">Clarna</b>
+                <b class="mx-2 text-lg md:text-2xl">InstaCase</b>
+                <b class="mx-2 text-lg md:text-2xl">CoinBase</b>
+            </div>
+        </div>
+        <!--text section ends here-->
+
+
+
+
+        <!--picture section starts here-->
+        <div
+            class="uw1 text-sm md:text-[16px] mt-5 p-5 border w-1/2 ml-[25%] space-y-2 rounded-md bg-[url('https://i.pinimg.com/736x/c1/96/49/c1964947a3bd00d40bc6a63fe59d671b.jpg')]">
+            <!--first part of card-->
+            <div class="flex justify-center items-center">
+                <div class="w-[15%]"><img class="w-full"
+                        src="https://media.lordicon.com/icons/wired/outline/44-avatar-user-in-circle.svg" alt=""></div>
+                <div class="flex flex-col justify-start text-[10px]">
+                    <div>Syed Sharjeel Ahmed</div>
+                    <div>syedsharjeelahmed214@gmail.com</div>
+                </div>
+            </div>
+
+
+            <!--second part of card-->
+            <div class="border space-y-2 p-2 rounded">
+                <p class="text-[10px] md:text-[16px]">Invoice</p>
+                <div><b>12,8900$</b></div>
+                <div class="text-[10px] md:text-[16px]">14 Februaru, 2026</div>
+            </div>
+
+
+            <div class="flex flex-col gap-1">
+
+                <!-- Credit Card Option -->
+                <label id="label-card"
+                    class="flex items-center justify-between p-1 border-2 border-transparent rounded-lg cursor-pointer transition-all duration-200">
+                    <div class="flex items-center gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect width="20" height="14" x="2" y="5" rx="2" />
+                            <line x1="2" y1="10" x2="22" y2="10" />
+                        </svg>
+                        <span>Credit Card</span>
+                    </div>
+                    <input type="radio" name="payment" value="card" class="accent-green-500"
+                        onchange="updateActive(this)">
+                </label>
+
+                <!-- Bank Account Option -->
+                <label id="label-bank"
+                    class="flex items-center justify-between p-1 border-2 border-transparent rounded-lg cursor-pointer transition-all duration-200">
+                    <div class="flex items-center gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="3" y1="22" x2="21" y2="22" />
+                            <line x1="6" y1="18" x2="6" y2="11" />
+                            <line x1="10" y1="18" x2="10" y2="11" />
+                            <line x1="14" y1="18" x2="14" y2="11" />
+                            <line x1="18" y1="18" x2="18" y2="11" />
+                            <polygon points="12 2 20 7 4 7" />
+                        </svg>
+                        <span>Bank Account</span>
+                    </div>
+                    <input type="radio" name="payment" value="bank" class="accent-green-500"
+                        onchange="updateActive(this)">
+                </label>
+
+            </div>
+
+
+            <!--pay button is here-->
+            <div
+                class="w-full bg-green-300 text-white p-1 transition-all duration-300 hover:[box-shadow:0_10px_15px_0px_rgba(134,239,172,0.4)]">
+                <a href="pay.html">Pay</a>
+            </div>
+        </div>
+        <!--picture section ends gere-->
+    </section>
+    <!--Hero section ends here-->
+
+
+
+    <!--Experience section starts here-->
+    <section
+        class="text-sm md:text-[16px] flex flex-col mx-[10%] space-y-5 md:space-y-10 py-10 [box-shadow:0_8px_20px_2px_rgba(0,0,0,0.15),0_2px_6px_1px_rgba(0,0,0,0.06),2px_0_6px_1px_rgba(0,0,0,0.05),-2px_0_6px_1px_rgba(0,0,0,0.05)] px-10 rounded-md -mt-16 relative z-10 bg-white mb-10">
+
+
+        <!--First row on desktop starts here-->
+        <div class="space-y-3 md:grid md:grid-cols-2 hz">
+            <div class="flex justify-start items-start flex-col space-y-3">
+                <h1 class="text-green-300">Future Payment</h1>
+                <div class="text-2xl md:text-4xl font-bold">Experience that grows with your scale.</div>
+            </div>
+            <div class="flex justify-center items-center space-y-10">
+                <p class="text-[12px] md:text[16px] text-gray-400 text-center lg:w-[50%] lg:mt-5">Desighn a professional
+                    operating system that works for your
+                    business and streamlined cash flow management.</p>
+            </div>
+        </div>
+        <!--First row on desktop ends here-->
+
+        <!--Second row starts here-->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 uw1">
+            <div class="flex flex-col justify-start items-start space-y-2">
+                <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="4" width="18" height="18" rx="2" />
+                        <line x1="16" y1="2" x2="16" y2="6" />
+                        <line x1="8" y1="2" x2="8" y2="6" />
+                        <line x1="3" y1="10" x2="21" y2="10" />
+                        <circle cx="15" cy="16" r="3" />
+                        <polyline points="15 14.5 15 16 16 17" />
+                    </svg>
+                </div>
+                <h1 class="text-lg md:text-2xl font-bold">Free Transfer</h1>
+                <p>Create a professional experience and automate repeat purchses by scheduling recurring payments.</p>
+
+            </div>
+
+            <div class="flex flex-col justify-start items-start space-y-2 uw1">
+                <div><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="9" cy="7" r="3" />
+                        <path d="M3 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2" />
+                        <circle cx="17" cy="7" r="3" />
+                        <path d="M21 21v-2a4 4 0 0 0-3-3.87" />
+                    </svg></div>
+                <h1 class="text-lg md:text-2xl font-bold">Multiple Account</h1>
+                <p>Run your operations with cash from your account and generate yields on funds stored in your account
+                </p>
+
+            </div>
+
+
+            <div class="flex flex-col justify-start items-start space-y-2 uw1">
+                <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                        <rect x="9" y="11" width="6" height="5" rx="1" />
+                        <path d="M10 11V9a2 2 0 1 1 4 0v2" />
+                    </svg>
+                </div>
+                <h1 class="text-lg md:text-2xl font-bold">Unmatched Security</h1>
+                <p>Security manage your finance with organization-wide MFA, card-locking, and account level controls.
+                </p>
+
+            </div>
+        </div>
+        <!--second row ends here-->
+
+
+
+
+    </section>
+    <!--Experience section ends here-->
+
+
+
+
+
+    <!--WHY US section starts here-->
+    <section class="flex flex-col justify-center items-center mt-24 hz">
+        <div class="text-green-300 lg:text-2xl xl:text-3xl">Why us</div>
+        <h1 class="text-2xl md:text-3xl xl:text-5xl lg:text-4xl font-bold">Why they prefer Finpay</h1>
+    </section>
+    <!--WHY US section ends here-->
+
+
+
+
+
+    <!--WHY US box section starts here-->
+    <section class="flex flex-col p-[10%] gap-5">
+        <!--first row-->
+        <div class="grid grid-cols-2 gap-2">
+
+            <!--first box-->
+            <div class="hz p-5 space-y-5 bg-green-50 rounded-2xl flex flex-col justify-center items-center">
+                <h1 class="text-5xl md:text-6xl text-green-500">3k+</h1>
+                <p class="font-semibold md:text-lg">Business already running on Finpay.</p>
+            </div>
+
+            <!--second box-->
+            <div class="uw2 p-6 bg-green-50 rounded-2xl flex flex-col justify-center items-center">
+                <p class="font-semibold text-gray-900 md:text-lg leading-snug mb-6">
+                    Instant Withdraw your funds <br> at any time
+                </p>
+
+                <div class="flex items-center gap-2 md:gap-4">
+                    <!-- Finpay/Wallet Icon -->
+                    <div class="w-10 h-10 md:w-14 md:h-14 bg-teal-500 rounded-xl flex items-center justify-center">
+                        <svg class="w-5 h-5 md:w-7 md:h-7" viewBox="0 0 24 24" fill="none">
+                            <path d="M4 6l8 6 8-6" stroke="white" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M4 12l8 6 8-6" stroke="white" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </div>
+
+                    <!-- Double Arrow -->
+                    <div class="flex flex-col items-center gap-1">
+                        <svg width="30" height="12" viewBox="0 0 40 12" fill="none">
+                            <path d="M0 3h36M30 0l6 3-6 3" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                        <svg width="30" height="12" viewBox="0 0 40 12" fill="none">
+                            <path d="M40 9H4M10 12L4 9l6-3" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </div>
+
+                    <!-- Bank Icon -->
+                    <div class="w-10 h-10 md:w-14 md:h-14 bg-gray-800 rounded-full flex items-center justify-center">
+                        <svg class="w-5 h-5 md:w-6 md:h-6" viewBox="0 0 24 24" fill="none">
+                            <path d="M3 10h18M3 10l9-7 9 7M5 10v7m4-7v7m4-7v7m4-7v7M3 17h18" stroke="white"
+                                stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <!--second row-->
+        <div class="grid grid-cols-1 bg-green-50 p-5 rounded-2xl md:grid-cols-2 gap-8">
+
+
+            <div class="uw flex justify-center items-center flex-col space-y-5 p-5">
+                <h1 class="text-2xl md:text-3xl font-semibold">No asset volatility</h1>
+                <p class="text-gray-400 text-[10px] md:text-sm lg:text-[16px]">Generate returns on your cash reserves
+                    without making any investemnt</p>
+            </div>
+
+
+            <!--chart graph starts here-->
+            <div class="uw1 bg-white rounded-2xl shadow-md p-7">
+
+                <!-- Header -->
+                <div class="flex justify-between items-start mb-6">
+                    <div>
+                        <p class="text-sm text-gray-400 mb-1">Summary</p>
+                        <p class="lg:text-3xl text-2xl font-bold text-gray-900 tracking-tight">$1,876,580</p>
+                    </div>
+                    <button
+                        class="text-xs text-emerald-600 border border-emerald-200 bg-emerald-50 rounded-full px-3 py-1 hover:bg-emerald-100 transition">
+                        6 Months ▾
+                    </button>
+                </div>
+
+                <!-- Chart -->
+                <div class="relative w-full h-48">
+                    <canvas id="revenueChart"></canvas>
+                </div>
+
+            </div>
+
+
+
+            <!--chart graph ends here -->
+        </div>
+
+
+
+    </section>
+    <!--WHY US box section ends here-->
+
+
+
+
+    <!--Maximize section starts here-->
+    <section class="flex flex-col p-10 bg-green-400 text-white">
+        <!--first row-->
+        <div class="uw">
+            <div class="text-green-100">Step</div>
+            <h1 class="lg:w-1/2 text-2xl md:text-3xl lg:text-3xl xl:text-5xl">Maximize your returns with a Reserve
+                account that generates.</h1>
+        </div>
+
+
+
+        <!--second row-->
+        <div class="grid lg:grid-cols-3 lg:pt-10 gap-5">
+            <!--first box-->
+            <div class="hz p-5 bg-green-500 rounded-2xl mt-5 lg:mt-0">
+                <h3
+                    class="hz text-3xl md:text-4xl lg:text-5xl xl:text-8xl font-semibold bg-gradient-to-b from-white to-green-500 bg-clip-text text-transparent">
+                    1</h3>
+                <h1 class="hz text-lg lg:text-2xl xl:text-3xl font-semibold">Open your account</h1>
+                <p class="hz text-[12px] lg:text-[16px] w-[70%] lg:w-full">Sign up to Finpay and set up your account from
+                    your dashboard</p>
+            </div>
+
+            <!--second box-->
+            <div class="hz p-5 bg-green-500 rounded-2xl">
+                <h3
+                    class="hz text-3xl md:text-4xl lg:text-5xl xl:text-8xl font-semibold bg-gradient-to-b from-white to-green-500 bg-clip-text text-transparent">
+                    2</h3>
+                <h1 class="hz text-lg lg:text-2xl xl:text-3xl font-semibold">Transfer your money</h1>
+                <p class="hz text-[12px] lg:text-[16px] w-[70%] lg:w-full">Move money from one to another account and start
+                    to earning up your money</p>
+            </div>
+
+            <!--third box-->
+            <div class="hz p-5 bg-green-500 rounded-2xl">
+                <h3
+                    class="hz text-3xl md:text-4xl lg:text-5xl xl:text-8xl font-semibold bg-gradient-to-b from-white to-green-500 bg-clip-text text-transparent">
+                    3</h3>
+                <h1 class="hz text-lg lg:text-2xl xl:text-3xl font-semibold">Watch your balance grow</h1>
+                <p class="hz text-[12px] lg:text-[16px] w-[70%] lg:w-full">Accessed instantly and remain insulated from
+                    market volatility</p>
+            </div>
+        </div>
+
+
+
+    </section>
+    <!--Maximize section ends here-->
+
+
+
+    <!--Our mission section starts here-->
+    <section class="pt-10 p-5">
+
+
+        <!--first part-->
+        <div class="flex items-center justify-center flex-col space-y-5">
+            <div class="uw text-[12px] lg:text-[16px] xl:text-[20px] text-green-500">Our mission</div>
+            <h1 class="uw lg:w-[35%] w-full text-2xl lg:text-3xl xl:text-5xl font-semibold text-center">We've helped
+                innovative companies.</h1>
+            <p class="uw lg:w-[25%] w-full text-[12px] lg:text-[16px] text-gray-400 text-center">Hundreds of all sizes and
+                across all industries have
+                made a big improvement with us.</p>
+        </div>
+
+
+        <!--Second part-->
+        <div class="flex justify-center items-center p-10 gap-2 md:gap-4 xl:gap-10 lg:gap-6">
+            <div>
+                <h1 class="uw text-green-500 text-3xl lg:text-5xl xl:text-7xl font-semibold">24%</h1>
+                <h3 class="uw text-[14px] md:text-[16px] xl:text-lg text-gray-400">Revenue business</h3>
+            </div>
+            <div>
+                <h1 class="uw text-green-500 text-3xl lg:text-5xl xl:text-7xl font-semibold">180K</h1>
+                <h3 class="uw text-[14px] md:text-[16px] xl:text-lg text-gray-400">In annual revenue</h3>
+            </div>
+            <div>
+                <h1 class="uw text-green-500 text-3xl lg:text-5xl xl:text-7xl font-semibold">20+</h1>
+                <h3 class="uw text-[14px] md:text-[16px] xl:text-lg text-gray-400">Months of runway</h3>
+            </div>
+        </div>
+
+        <!--Third part-->
+        <div>
+            <h1 class="uw text-[12px] lg:text-[16px] text-center">Choose Plan:</h1>
+
+            <!--card plaining-->
+            <div
+                class="flex flex-col xl:px-40 lg:p-20 md:p-25 items-center justify-center lg:flex-row gap-1 md:gap-2 lg:gap-4 xl:gap-6">
+
+                <!-- First plan card -->
+                <div
+                    class="uw group w-full p-5 space-y-28 rounded-2xl bg-[url('https://media.istockphoto.com/id/1364490996/vector/abstract-gray-silver-and-white-lines-pattern-background.jpg?s=612x612&w=0&k=20&c=nMYo6Uzg2ARSzjMKEtH_Li6QGz5DrgBZNaG6lMn8JxA=')] cursor-pointer">
+                    <h1 class="text-2xl md:text-3xl lg:text-4xl xl:text-6xl">PLUS</h1>
+
+                    <!-- Price + Arrow on same line -->
+                    <div class="uw flex justify-between items-center">
+                        <div class="md:text-[18px] xl:text-[20px] lg:text-lg text-gray-500">€2.99/month</div>
+                        <span
+                            class="text-2xl text-gray-500 transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 inline-block">↗</span>
+                    </div>
+                </div>
+
+                <!-- Second plan card -->
+                <div
+                    class="uw group w-full p-5 text-white bg-green-500 space-y-28 rounded-2xl bg-[url('https://img.freepik.com/premium-vector/educational-icon-banner-social-media-cover-template_823925-1668.jpg?semt=ais_rp_progressive&w=740&q=80')] cursor-pointer">
+                    <h1 class="text-2xl md:text-3xl lg:text-4xl xl:text-6xl">PREMIUM</h1>
+
+                    <!-- Price + Arrow on same line -->
+                    <div class="uw flex justify-between items-center">
+                        <div class="md:text-[18px] xl:text-[20px] lg:text-lg">€6.99/month</div>
+                        <span
+                            class="text-2xl transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 inline-block">↗</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+    <!--Our mission section ends here-->
+
+
+
+    <!--Payment process section starts here-->
+    <section class="m-10 p-10 flex flex-col lg:grid lg:grid-cols-2 bg-green-400 text-white rounded-2xl gap-3">
+
+
+        <!--first part-->
+        <div class="space-y-5">
+            <div class="uw text-green-100 lg:text-lg">Try it now</div>
+            <h1 class="uw text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold">Ready to level up your payment
+                process</h1>
+            <p class="uw text-gray-100 text-[14px] lg:text-lg">Supports small businesses with small invoices , powerful
+                integration , and cash flow management tools.</p>
+        </div>
+
+
+        <!--second part-->
+        <div class="flex justify-center items-center gap-5 text-white">
+
+            <!-- Get Started Button -->
+            <div class="hz group flex items-center gap-2 p-2 rounded-lg bg-green-600 cursor-pointer">
+                <a href="getstarted.html">Get started now</a>
+                <span
+                    class="inline-block transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1">↗</span>
+            </div>
+
+            <!-- Learn More Button -->
+            <div class="hz group flex items-center gap-2 p-2 rounded-md border border-white cursor-pointer">
+                <a href="learnmore.html">Learn more</a>
+                <span
+                    class="inline-block transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1">↗</span>
+            </div>
+
+        </div>
+
+
+    </section>
+    <!--Payment process section ends here-->
+
+
+
+
+    <!--fotter section starts here-->
+    <div id="footer-placeholder"></div>
+
+    <script>
+        fetch('/component/footer.html')
+            .then(res => res.text())
+            .then(html => {
+                document.getElementById('footer-placeholder').innerHTML = html;
+            });
+    </script>
+    <!--fotter section  ends here-->
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

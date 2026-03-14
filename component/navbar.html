@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/src/output.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="font-[Poppins]">
+
+
+    <!-- Wrap the nav in a relative div -->
+<div class="relative">
+
+  <nav class="p-4 flex items-center justify-between text-sm bg-white shadow">
+
+    <!-- Logo -->
+    <div class="w-20">
+      <img class="w-full"
+        src="https://www.finpay.com/hs-fs/hubfs/FinPay-Theme/Finpay-logo.png?width=555&height=155&name=Finpay-logo.png"
+        alt="Finpay logo">
+    </div>
+
+    <!-- Desktop Menu -->
+    <div class="hidden md:flex gap-8">
+      <div>Product</div>
+      <div>Customer</div>
+      <div>Pricing</div>
+      <div>Learn</div>
+    </div>
+
+    <!-- Buttons -->
+    <div class="hidden md:flex gap-2 items-center">
+        <a href="login.html" class="px-3 py-1 border rounded-md">Login</a>
+      <a href="sign.html" class="px-3 py-1 border bg-green-300 text-white rounded-md">Sign Up</a>
+    </div>
+
+    <!-- Hamburger Button -->
+    <button id="menu-btn" class="md:hidden text-2xl">☰</button>
+
+  </nav>
+
+  <!-- Mobile Dropdown — now floats OVER the page ✅ -->
+  <div id="mobile-menu" class="hidden flex-col gap-4 p-4 bg-gray-100 md:hidden
+                               absolute top-full left-0 w-full shadow-lg z-50">
+
+    <div>Product</div>
+    <div>Customer</div>
+    <div>Pricing</div>
+    <div>Learn</div>
+
+    <div class="p-1"></div>
+    <div class="text-sm"><a href="login.html" class="px-2 py-1 border rounded-md w-fit">Login</a></div>
+    <div class="p-1"></div>
+    <div class="p-1"></div>
+    <div class="text-sm"><a href="sign.html" class="px-1 py-1 bg-green-300 text-white  border rounded-md w-fit">Sign up</a></div>
+    
+
+  </div>
+
+</div>
+
+    <script>
+        const btn = document.getElementById("menu-btn");
+        const menu = document.getElementById("mobile-menu");
+
+        btn.addEventListener("click", () => {
+            menu.classList.toggle("hidden");
+        });
+    </script>
+
+    </nav>
+</body>
+
+</html>
